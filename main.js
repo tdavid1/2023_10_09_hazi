@@ -10,11 +10,14 @@ console.log(ferfiak)
 const nok = lista.filter(szemely => szemely.nem == "nő").length;
 console.log(nok)
 
-const fizetesnagyobbmint150k = lista.filter(szemely => szemely.fizetes>150000).map(szemely => szemely.id + ":"+ szemely.nev+ " "+szemely.nem+" "+ szemely.kor+" "+szemely.fizetes+"\n");
-console.log(`150k nál nagyobb fizetésel rendelkezők:${fizetesnagyobbmint150k}`)
+const fizetesnagyobbmint150k = lista.filter(szemely => szemely.fizetes>150000);
+console.log(`150k nál nagyobb fizetésel rendelkezők:`)
+console.log(fizetesnagyobbmint150k)
 
-const vezeteknevnagy = lista.filter(szemely => szemely.nev.includes("Nagy")).map(szemely => szemely.id + ":"+ szemely.nev+ " "+szemely.nem+" "+ szemely.kor+" "+szemely.fizetes+"\n");
-console.log(`A nagy vezetéknevüek:${vezeteknevnagy}`)
+const vezeteknevnagy = lista.filter(szemely => szemely.nev.includes("Nagy"));
+console.log(`A nagy vezetéknevüek:`)
+console.log(vezeteknevnagy)
 
-const kiskoru = lista.filter(szemely => szemely.kor<18).map(szemely =>szemely.nev+":"+szemely.fizetes+"\n");
+const kiskoru = lista.filter(szemely => szemely.kor<18).map(szemely => ({ nev:  szemely.nev, fizetes: szemely.fizetes}));
 console.log(`A Kiskorúak és fizetésük:${kiskoru}`)
+console.log(kiskoru)
